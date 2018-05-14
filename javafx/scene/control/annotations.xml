@@ -1,0 +1,5 @@
+<root>
+    <item name='javafx.scene.control.RadioButton'>
+        <annotation name='java.lang.Deprecated'/>
+    </item>
+</root>
