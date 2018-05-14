@@ -1,11 +1,14 @@
 package sample;
 
-import javafx.beans.property.StringProperty;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.layout.VBox;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -19,6 +22,8 @@ public class Controller1 implements Initializable {
     public Button secondButton;
     @FXML
     public Label secondLabel;
+    @FXML
+    public VBox vbox;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -26,5 +31,11 @@ public class Controller1 implements Initializable {
     }
     public void setLabel(String message){
         secondLabel.setText(message);
+    }
+
+    public void secondButtonClicked(ActionEvent actionEvent) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../sampleFxml/sample.fxml"));
+        VBox tempVbox = loader.load();
+        vbox.getChildren().addAll(tempVbox);
     }
 }
